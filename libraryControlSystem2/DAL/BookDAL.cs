@@ -64,5 +64,72 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
             return dt;
         }
+        public void UpdateBook(
+    int id,
+    string isbn,
+    string title,
+    string author,
+    string publisher,
+    int publishYear,
+    int stock)
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"UPDATE Books SET
+                        ISBN = @isbn,
+                        Title = @title,
+                        Author = @author,
+                        Publisher = @publisher,
+                        PublishYear = @year,
+                        Stock = @stock
+                     WHERE BookID = @id";
+
+            MySqlCommand cmd = new MySqlCommand(query, db.OpenConnection());
+
+            cmd.Parameters.AddWithValue("@isbn", isbn);
+            cmd.Parameters.AddWithValue("@title", title);
+            cmd.Parameters.AddWithValue("@author", author);
+            cmd.Parameters.AddWithValue("@publisher", publisher);
+            cmd.Parameters.AddWithValue("@year", publishYear);
+            cmd.Parameters.AddWithValue("@stock", stock);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+            db.CloseConnection();
+        }
+        public DataTable GetLowStockBooks()
+        {
+            DbConnection db = new DbConnection();
+
+            string query = "SELECT * FROM Books WHERE Stock <= 3";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            db.CloseConnection();
+            return dt;
+        }
+        public DataTable SearchBooks(string keyword)
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"SELECT * FROM Books
+                     WHERE ISBN LIKE @key
+                     OR Title LIKE @key";
+
+            MySqlCommand cmd = new MySqlCommand(query, db.OpenConnection());
+            cmd.Parameters.AddWithValue("@key", "%" + keyword + "%");
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            db.CloseConnection();
+            return dt;
+        }
+
+
+
     }
 }

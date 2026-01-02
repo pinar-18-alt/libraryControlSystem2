@@ -44,6 +44,10 @@
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnListBooks = new System.Windows.Forms.Button();
             this.btnDeleteBook = new System.Windows.Forms.Button();
+            this.btnUpdateBook = new System.Windows.Forms.Button();
+            this.btnLowStock = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,12 +160,13 @@
             // dgvBooks
             // 
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(480, 15);
+            this.dgvBooks.Location = new System.Drawing.Point(497, 54);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.RowHeadersWidth = 51;
             this.dgvBooks.RowTemplate.Height = 24;
             this.dgvBooks.Size = new System.Drawing.Size(418, 291);
             this.dgvBooks.TabIndex = 22;
+            this.dgvBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellClick);
             // 
             // btnListBooks
             // 
@@ -183,11 +188,52 @@
             this.btnDeleteBook.UseVisualStyleBackColor = true;
             this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
             // 
+            // btnUpdateBook
+            // 
+            this.btnUpdateBook.Location = new System.Drawing.Point(146, 336);
+            this.btnUpdateBook.Name = "btnUpdateBook";
+            this.btnUpdateBook.Size = new System.Drawing.Size(117, 40);
+            this.btnUpdateBook.TabIndex = 25;
+            this.btnUpdateBook.Text = "Kitap Güncelle";
+            this.btnUpdateBook.UseVisualStyleBackColor = true;
+            this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            // 
+            // btnLowStock
+            // 
+            this.btnLowStock.Location = new System.Drawing.Point(497, 365);
+            this.btnLowStock.Name = "btnLowStock";
+            this.btnLowStock.Size = new System.Drawing.Size(132, 25);
+            this.btnLowStock.TabIndex = 26;
+            this.btnLowStock.Text = "Stokta Azalanlar";
+            this.btnLowStock.UseVisualStyleBackColor = true;
+            this.btnLowStock.Click += new System.EventHandler(this.btnLowStock_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.AutoSize = true;
+            this.btnSearch.Location = new System.Drawing.Point(494, 21);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(28, 16);
+            this.btnSearch.TabIndex = 27;
+            this.btnSearch.Text = "Ara";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(563, 18);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(199, 22);
+            this.txtSearch.TabIndex = 28;
+            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 508);
+            this.ClientSize = new System.Drawing.Size(1245, 607);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnLowStock);
+            this.Controls.Add(this.btnUpdateBook);
             this.Controls.Add(this.btnDeleteBook);
             this.Controls.Add(this.btnListBooks);
             this.Controls.Add(this.dgvBooks);
@@ -206,6 +252,7 @@
             this.Controls.Add(this.label1);
             this.Name = "BookForm";
             this.Text = "BookForm";
+            this.Load += new System.EventHandler(this.BookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,5 +277,9 @@
         private System.Windows.Forms.DataGridView dgvBooks;
         private System.Windows.Forms.Button btnListBooks;
         private System.Windows.Forms.Button btnDeleteBook;
+        private System.Windows.Forms.Button btnUpdateBook;
+        private System.Windows.Forms.Button btnLowStock;
+        private System.Windows.Forms.Label btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
