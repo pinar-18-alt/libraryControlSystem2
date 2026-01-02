@@ -12,33 +12,57 @@ namespace libraryControlSystem2.UI
             InitializeComponent();
         }
 
+
         private void BorrowReportForm_Load(object sender, EventArgs e)
         {
             BorrowBLL borrowBLL = new BorrowBLL();
-
             dgvDueSoon.DataSource = borrowBLL.GetDueSoonBorrows();
 
             dgvDueSoon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDueSoon.ReadOnly = true;
             dgvDueSoon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-
         private void dgvDueSoon_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            if (dgvDueSoon.Rows[e.RowIndex].Cells["DueDate"].Value == null)
+            if (e.RowIndex < 0)
                 return;
 
             DateTime dueDate = Convert.ToDateTime(
                 dgvDueSoon.Rows[e.RowIndex].Cells["DueDate"].Value
             );
 
-            int daysLeft = (dueDate - DateTime.Now).Days;
+            int daysDiff = (dueDate - DateTime.Now).Days;
 
-            if (daysLeft <= 3)
+            // GECİKMİŞ
+            if (daysDiff < 0)
             {
                 dgvDueSoon.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;
             }
+            // YAKLAŞAN (3 gün ve altı)
+            else if (daysDiff <= 3)
+            {
+                dgvDueSoon.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Khaki;
+            }
+        }
+
+        private void btnReturnBook_Click(object sender, EventArgs e)
+        {
+            if (dgvDueSoon.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Lütfen iade edilecek kaydı seçin.");
+                return;
+            }
+
+            int borrowId = Convert.ToInt32(
+                dgvDueSoon.SelectedRows[0].Cells["BorrowID"].Value
+            );
+
+            BorrowBLL bll = new BorrowBLL();
+            bll.ReturnBook(borrowId);
+
+            MessageBox.Show("Kitap iade edildi.");
+
+            dgvDueSoon.DataSource = bll.GetDueSoonBorrows();
         }
     }
 }
-

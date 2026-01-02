@@ -27,22 +27,24 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
         }
 
-        // İADESİ YAKLAŞAN KİTAPLAR (RAPOR)
+        // İADESİ YAKLAŞAN / GECİKEN KİTAPLAR (RAPOR)
         public DataTable GetDueSoonBorrows()
         {
             DbConnection db = new DbConnection();
 
-            string query = @"SELECT 
-                                b.BorrowID,
-                                bk.Title,
-                                m.Name,
-                                b.BorrowDate,
-                                b.DueDate
-                             FROM Borrows b
-                             JOIN Books bk ON b.BookID = bk.BookID
-                             JOIN Members m ON b.MemberID = m.MemberID
-                             WHERE b.ReturnDate IS NULL
-                             AND b.DueDate <= DATE_ADD(CURDATE(), INTERVAL 3 DAY)";
+            string query = @"
+                SELECT 
+                    b.Title AS Kitap,
+                    m.Name AS Uye,
+                    br.BorrowDate,
+                    br.DueDate,
+                    DATEDIFF(br.DueDate, CURDATE()) AS KalanGun
+                FROM Borrows br
+                INNER JOIN Books b ON br.BookID = b.BookID
+                INNER JOIN Members m ON br.MemberID = m.MemberID
+                WHERE br.ReturnDate IS NULL
+                ORDER BY br.DueDate ASC
+            ";
 
             MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
             DataTable dt = new DataTable();
@@ -51,5 +53,29 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
             return dt;
         }
+        public void ReturnBook(int borrowId)
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"
+        UPDATE Borrows
+        SET ReturnDate = CURDATE()
+        WHERE BorrowID = @id;
+
+        UPDATE Books
+        SET Stock = Stock + 1
+        WHERE BookID = (
+            SELECT BookID FROM Borrows WHERE BorrowID = @id
+        );
+    ";
+
+            MySqlCommand cmd = new MySqlCommand(query, db.OpenConnection());
+            cmd.Parameters.AddWithValue("@id", borrowId);
+
+            cmd.ExecuteNonQuery();
+            db.CloseConnection();
+        }
+
     }
 }
+

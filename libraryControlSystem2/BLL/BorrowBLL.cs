@@ -2,7 +2,6 @@
 using System.Data;
 using libraryControlSystem2.DAL;
 
-
 namespace libraryControlSystem2.BLL
 {
     public class BorrowBLL
@@ -22,6 +21,15 @@ namespace libraryControlSystem2.BLL
             BorrowDAL borrowDal = new BorrowDAL();
             borrowDal.BorrowBook(bookId, memberId, dueDate);
         }
+        public void ReturnBook(int borrowId)
+        {
+            if (borrowId <= 0)
+                throw new Exception("Geçersiz ödünç kaydı.");
+
+            BorrowDAL dal = new BorrowDAL();
+            dal.ReturnBook(borrowId);
+        }
+
 
         // İADESİ YAKLAŞAN KİTAPLAR (RAPORLAMA)
         public DataTable GetDueSoonBorrows()

@@ -48,6 +48,7 @@
             this.btnLowStock = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnBorrowReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,9 +201,9 @@
             // 
             // btnLowStock
             // 
-            this.btnLowStock.Location = new System.Drawing.Point(497, 365);
+            this.btnLowStock.Location = new System.Drawing.Point(497, 351);
             this.btnLowStock.Name = "btnLowStock";
-            this.btnLowStock.Size = new System.Drawing.Size(132, 25);
+            this.btnLowStock.Size = new System.Drawing.Size(132, 43);
             this.btnLowStock.TabIndex = 26;
             this.btnLowStock.Text = "Stokta Azalanlar";
             this.btnLowStock.UseVisualStyleBackColor = true;
@@ -225,11 +226,22 @@
             this.txtSearch.Size = new System.Drawing.Size(199, 22);
             this.txtSearch.TabIndex = 28;
             // 
+            // btnBorrowReport
+            // 
+            this.btnBorrowReport.Location = new System.Drawing.Point(1050, 54);
+            this.btnBorrowReport.Name = "btnBorrowReport";
+            this.btnBorrowReport.Size = new System.Drawing.Size(135, 42);
+            this.btnBorrowReport.TabIndex = 29;
+            this.btnBorrowReport.Text = "İade Raporu 🔔";
+            this.btnBorrowReport.UseVisualStyleBackColor = true;
+            this.btnBorrowReport.Click += new System.EventHandler(this.btnBorrowReport_Click);
+            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 607);
+            this.Controls.Add(this.btnBorrowReport);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnLowStock);
@@ -281,5 +293,6 @@
         private System.Windows.Forms.Button btnLowStock;
         private System.Windows.Forms.Label btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnBorrowReport;
     }
 }

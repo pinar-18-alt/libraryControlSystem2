@@ -212,6 +212,10 @@ namespace libraryControlSystem2.UI
             }
         }
 
-        
+        private void btnBorrowReport_Click(object sender, EventArgs e)
+        {
+            BorrowReportForm reportForm = new BorrowReportForm();
+            reportForm.Show();
+        }
     }
 }
