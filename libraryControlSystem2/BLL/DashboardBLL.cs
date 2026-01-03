@@ -6,19 +6,9 @@ namespace libraryControlSystem2.BLL
     {
         DashboardDAL dal = new DashboardDAL();
 
-        public int TotalBooks()
-        {
-            return dal.GetTotalBookCount();
-        }
-
-        public int BorrowedBooks()
-        {
-            return dal.GetBorrowedBookCount();
-        }
-
-        public int DueSoonBooks()
-        {
-            return dal.GetDueSoonCount();
-        }
+        public int TotalBooks() => dal.GetTotalBooks();
+        public int TotalMembers() => dal.GetTotalMembers();
+        public int ActiveBorrows() => dal.GetActiveBorrows();
+        public int LateBorrows() => dal.GetLateBorrows();
     }
 }

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.lblTotalBooks = new System.Windows.Forms.Label();
-            this.lblBorrowed = new System.Windows.Forms.Label();
-            this.lblDueSoon = new System.Windows.Forms.Label();
+            this.lblActiveBorrows = new System.Windows.Forms.Label();
+            this.lblTotalMembers = new System.Windows.Forms.Label();
+            this.lblLateBorrows = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTotalBooks
@@ -42,35 +43,45 @@
             this.lblTotalBooks.TabIndex = 0;
             this.lblTotalBooks.Text = "Toplam Kitap: 0";
             // 
-            // lblBorrowed
+            // lblActiveBorrows
             // 
-            this.lblBorrowed.AutoSize = true;
-            this.lblBorrowed.Location = new System.Drawing.Point(12, 42);
-            this.lblBorrowed.Name = "lblBorrowed";
-            this.lblBorrowed.Size = new System.Drawing.Size(70, 16);
-            this.lblBorrowed.TabIndex = 1;
-            this.lblBorrowed.Text = "Ödünçte: 0";
+            this.lblActiveBorrows.AutoSize = true;
+            this.lblActiveBorrows.Location = new System.Drawing.Point(12, 42);
+            this.lblActiveBorrows.Name = "lblActiveBorrows";
+            this.lblActiveBorrows.Size = new System.Drawing.Size(70, 16);
+            this.lblActiveBorrows.TabIndex = 1;
+            this.lblActiveBorrows.Text = "Ödünçte: 0";
             // 
-            // lblDueSoon
+            // lblTotalMembers
             // 
-            this.lblDueSoon.AutoSize = true;
-            this.lblDueSoon.Location = new System.Drawing.Point(12, 78);
-            this.lblDueSoon.Name = "lblDueSoon";
-            this.lblDueSoon.Size = new System.Drawing.Size(117, 16);
-            this.lblDueSoon.TabIndex = 2;
-            this.lblDueSoon.Text = "İadesi Yaklaşan: 0";
+            this.lblTotalMembers.AutoSize = true;
+            this.lblTotalMembers.Location = new System.Drawing.Point(12, 78);
+            this.lblTotalMembers.Name = "lblTotalMembers";
+            this.lblTotalMembers.Size = new System.Drawing.Size(85, 16);
+            this.lblTotalMembers.TabIndex = 2;
+            this.lblTotalMembers.Text = "Toplam Üye:";
+            // 
+            // lblLateBorrows
+            // 
+            this.lblLateBorrows.AutoSize = true;
+            this.lblLateBorrows.Location = new System.Drawing.Point(12, 108);
+            this.lblLateBorrows.Name = "lblLateBorrows";
+            this.lblLateBorrows.Size = new System.Drawing.Size(75, 16);
+            this.lblLateBorrows.TabIndex = 3;
+            this.lblLateBorrows.Text = "Gecikenler:";
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblDueSoon);
-            this.Controls.Add(this.lblBorrowed);
+            this.Controls.Add(this.lblLateBorrows);
+            this.Controls.Add(this.lblTotalMembers);
+            this.Controls.Add(this.lblActiveBorrows);
             this.Controls.Add(this.lblTotalBooks);
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
-            this.Load += new System.EventHandler(this.DashboardForm_Load_1);
+       
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +90,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblTotalBooks;
-        private System.Windows.Forms.Label lblBorrowed;
-        private System.Windows.Forms.Label lblDueSoon;
+        private System.Windows.Forms.Label lblActiveBorrows;
+        private System.Windows.Forms.Label lblTotalMembers;
+        private System.Windows.Forms.Label lblLateBorrows;
     }
 }

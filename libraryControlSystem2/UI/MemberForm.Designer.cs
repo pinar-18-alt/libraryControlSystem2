@@ -128,11 +128,15 @@
             // 
             // dgvMembers
             // 
+            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMembers.Location = new System.Drawing.Point(328, 36);
+            this.dgvMembers.MultiSelect = false;
             this.dgvMembers.Name = "dgvMembers";
+            this.dgvMembers.ReadOnly = true;
             this.dgvMembers.RowHeadersWidth = 51;
             this.dgvMembers.RowTemplate.Height = 24;
+            this.dgvMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMembers.Size = new System.Drawing.Size(294, 160);
             this.dgvMembers.TabIndex = 10;
             // 
@@ -154,6 +158,7 @@
             this.Controls.Add(this.txtFirstName);
             this.Name = "MemberForm";
             this.Text = "MemberForm";
+            this.Load += new System.EventHandler(this.MemberForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

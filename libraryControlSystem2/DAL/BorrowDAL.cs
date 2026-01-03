@@ -76,6 +76,103 @@ namespace libraryControlSystem2.DAL
             cmd.ExecuteNonQuery();
             db.CloseConnection();
         }
+        public DataTable GetActiveBorrows()
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"
+        SELECT 
+            br.BorrowID,
+            b.Title AS Kitap,
+            CONCAT(m.FirstName, ' ', m.LastName) AS Uye,
+            br.BorrowDate,
+            br.DueDate
+        FROM Borrows br
+        JOIN Books b ON br.BookID = b.BookID
+        JOIN Members m ON br.MemberID = m.MemberID
+        WHERE br.ReturnDate IS NULL
+        ORDER BY br.BorrowDate DESC
+    ";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            db.CloseConnection();
+            return dt;
+        }
+        // GECİKEN KİTAPLAR
+        public DataTable GetLateBorrows()
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"
+        SELECT 
+            b.Title AS Kitap,
+            CONCAT(m.FirstName, ' ', m.LastName) AS Uye,
+            br.DueDate AS IadeTarihi,
+            DATEDIFF(CURDATE(), br.DueDate) AS GecikmeGun
+        FROM Borrows br
+        JOIN Books b ON br.BookID = b.BookID
+        JOIN Members m ON br.MemberID = m.MemberID
+        WHERE br.ReturnDate IS NULL
+        AND br.DueDate < CURDATE()
+        ORDER BY br.DueDate ASC
+    ";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            db.CloseConnection();
+            return dt;
+        }
+        // EN ÇOK ÖDÜNÇ ALINAN KİTAPLAR
+        public DataTable GetMostBorrowedBooks()
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"
+        SELECT 
+            b.Title AS Kitap,
+            COUNT(*) AS OduncSayisi
+        FROM Borrows br
+        JOIN Books b ON br.BookID = b.BookID
+        GROUP BY b.BookID
+        ORDER BY OduncSayisi DESC
+    ";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            db.CloseConnection();
+            return dt;
+        }
+        // AKTİF ÜYELER RAPORU
+        public DataTable GetActiveMembers()
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"
+        SELECT 
+            CONCAT(m.FirstName, ' ', m.LastName) AS Uye,
+            COUNT(*) AS AktifOdunc
+        FROM Borrows br
+        JOIN Members m ON br.MemberID = m.MemberID
+        WHERE br.ReturnDate IS NULL
+        GROUP BY m.MemberID
+        ORDER BY AktifOdunc DESC
+    ";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            db.CloseConnection();
+            return dt;
+        }
+
+
 
     }
 }

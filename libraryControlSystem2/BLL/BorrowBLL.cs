@@ -37,5 +37,29 @@ namespace libraryControlSystem2.BLL
             BorrowDAL borrowDal = new BorrowDAL();
             return borrowDal.GetDueSoonBorrows();
         }
+        public DataTable GetActiveBorrows()
+        {
+            BorrowDAL dal = new BorrowDAL();
+            return dal.GetActiveBorrows();
+        }
+        // GECİKEN KİTAPLAR RAPORU
+        public DataTable GetLateBorrows()
+        {
+            BorrowDAL dal = new BorrowDAL();
+            return dal.GetLateBorrows();
+        }
+        // EN ÇOK ÖDÜNÇ ALINAN KİTAPLAR
+        public DataTable GetMostBorrowedBooks()
+        {
+            BorrowDAL dal = new BorrowDAL();
+            return dal.GetMostBorrowedBooks();
+        }
+        // AKTİF ÜYELER RAPORU
+        public DataTable GetActiveMembers()
+        {
+            BorrowDAL dal = new BorrowDAL();
+            return dal.GetActiveMembers();
+        }
+
     }
 }

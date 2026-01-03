@@ -15,19 +15,12 @@ namespace libraryControlSystem2.UI
         {
             DashboardBLL bll = new DashboardBLL();
 
-            lblTotalBooks.Text = "Toplam Kitap: " + bll.TotalBooks();
-            lblBorrowed.Text = "Ödünçte: " + bll.BorrowedBooks();
-            lblDueSoon.Text = "İadesi Yaklaşan: " + bll.DueSoonBooks();
+            lblTotalBooks.Text = bll.TotalBooks().ToString();
+            lblTotalMembers.Text = bll.TotalMembers().ToString();
+            lblActiveBorrows.Text = bll.ActiveBorrows().ToString();
+            lblLateBorrows.Text = bll.LateBorrows().ToString();
         }
 
-        private void DashboardForm_Load_1(object sender, EventArgs e)
-        {
-            DashboardBLL bll = new DashboardBLL();
-
-            lblTotalBooks.Text = "Toplam Kitap: " + bll.TotalBooks();
-            lblBorrowed.Text = "Ödünçte: " + bll.BorrowedBooks();
-            lblDueSoon.Text = "İadesi Yaklaşan: " + bll.DueSoonBooks();
-
-        }
     }
 }
+
