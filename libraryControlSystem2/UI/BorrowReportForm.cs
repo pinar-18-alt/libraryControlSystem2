@@ -16,22 +16,27 @@ namespace libraryControlSystem2.UI
         private void BorrowReportForm_Load(object sender, EventArgs e)
         {
             BorrowBLL borrowBLL = new BorrowBLL();
+
             dgvDueSoon.DataSource = borrowBLL.GetDueSoonBorrows();
 
             dgvDueSoon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDueSoon.ReadOnly = true;
             dgvDueSoon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
         private void dgvDueSoon_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
+            // Önce default rengi sıfırla
+            dgvDueSoon.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+
             DateTime dueDate = Convert.ToDateTime(
                 dgvDueSoon.Rows[e.RowIndex].Cells["DueDate"].Value
             );
 
-            int daysDiff = (dueDate - DateTime.Now).Days;
+            int daysDiff = (dueDate.Date - DateTime.Today).Days;
 
             // GECİKMİŞ
             if (daysDiff < 0)
@@ -44,6 +49,7 @@ namespace libraryControlSystem2.UI
                 dgvDueSoon.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Khaki;
             }
         }
+
 
         private void btnReturnBook_Click(object sender, EventArgs e)
         {

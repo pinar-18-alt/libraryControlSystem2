@@ -33,18 +33,19 @@ namespace libraryControlSystem2.DAL
             DbConnection db = new DbConnection();
 
             string query = @"
-                SELECT 
-                    b.Title AS Kitap,
-                    m.Name AS Uye,
-                    br.BorrowDate,
-                    br.DueDate,
-                    DATEDIFF(br.DueDate, CURDATE()) AS KalanGun
-                FROM Borrows br
-                INNER JOIN Books b ON br.BookID = b.BookID
-                INNER JOIN Members m ON br.MemberID = m.MemberID
-                WHERE br.ReturnDate IS NULL
-                ORDER BY br.DueDate ASC
-            ";
+        SELECT 
+            b.Title AS Kitap,
+            CONCAT(m.FirstName, ' ', m.LastName) AS Uye,
+            br.BorrowDate,
+            br.DueDate,
+            DATEDIFF(br.DueDate, CURDATE()) AS KalanGun
+        FROM Borrows br
+        JOIN Books b ON br.BookID = b.BookID
+        JOIN Members m ON br.MemberID = m.MemberID
+        WHERE br.ReturnDate IS NULL
+          AND br.DueDate BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 3 DAY)
+        ORDER BY br.DueDate ASC
+    ";
 
             MySqlDataAdapter da = new MySqlDataAdapter(query, db.OpenConnection());
             DataTable dt = new DataTable();

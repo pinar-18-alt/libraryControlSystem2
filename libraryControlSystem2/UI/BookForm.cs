@@ -57,10 +57,8 @@ namespace libraryControlSystem2.UI
                     txtStock.Text
                 );
 
-                MessageBox.Show("Kitap başarıyla eklendi");
-
-                LoadBooks();
-                ClearInputs();
+                dgvBooks.DataSource = bookBLL.GetAllBooks();
+                MessageBox.Show("Kitap başarıyla eklendi.");
             }
             catch (Exception ex)
             {
@@ -99,9 +97,10 @@ namespace libraryControlSystem2.UI
         // KİTAP GÜNCELLE
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
+           
             if (selectedBookId == 0)
             {
-                MessageBox.Show("Lütfen güncellenecek kitabı seçin.");
+                MessageBox.Show("Güncellenecek kitabı seçin.");
                 return;
             }
 
@@ -111,15 +110,16 @@ namespace libraryControlSystem2.UI
 
                 bookBLL.UpdateBook(
                     selectedBookId,
-                    txtISBN.Text,
-                    txtTitle.Text,
-                    txtAuthor.Text,
-                    txtPublisher.Text,
-                    txtYear.Text,
-                    txtStock.Text
+                    txtISBN.Text.Trim(),
+                    txtTitle.Text.Trim(),
+                    txtAuthor.Text.Trim(),
+                    txtPublisher.Text.Trim(),
+                    txtYear.Text.Trim(),
+                    txtStock.Text.Trim()
                 );
 
-                MessageBox.Show("Kitap güncellendi.");
+              
+                MessageBox.Show("Kitap başarıyla güncellendi.");
 
                 dgvBooks.DataSource = bookBLL.GetAllBooks();
                 ClearInputs();
@@ -128,35 +128,8 @@ namespace libraryControlSystem2.UI
             {
                 MessageBox.Show(ex.Message);
             }
-            if (selectedBookId == 0)
-            {
-                MessageBox.Show("Lütfen güncellenecek kitabı seçin.");
-                return;
-            }
-
-            try
-            {
-                BookBLL bookBLL = new BookBLL();
-                bookBLL.UpdateBook(
-                    selectedBookId,
-                    txtISBN.Text,
-                    txtTitle.Text,
-                    txtAuthor.Text,
-                    txtPublisher.Text,
-                    txtYear.Text,
-                    txtStock.Text
-                );
-
-                MessageBox.Show("Kitap güncellendi");
-
-                LoadBooks();
-                ClearInputs();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
+
 
         //  GRID SATIR SEÇİMİ → TEXTBOX DOLDUR
         private void dgvBooks_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -216,6 +189,16 @@ namespace libraryControlSystem2.UI
         {
             BorrowReportForm reportForm = new BorrowReportForm();
             reportForm.Show();
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BookBLL bookBLL = new BookBLL();
+                dgvBooks.DataSource = bookBLL.SearchBooks(txtSearch.Text);
+            }
+
         }
     }
 }
