@@ -102,11 +102,13 @@
     <Compile Include="BLL\BorrowBLL.cs" />
     <Compile Include="BLL\DashboardBLL.cs" />
     <Compile Include="BLL\MemberBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="DAL\BookDAL.cs" />
     <Compile Include="DAL\BorrowDAL.cs" />
     <Compile Include="DAL\DashboardDAL.cs" />
     <Compile Include="DAL\DbConnection.cs" />
     <Compile Include="DAL\MemberDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="UI\BookForm.cs">
       <SubType>Form</SubType>
     </Compile>

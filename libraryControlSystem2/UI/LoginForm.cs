@@ -15,23 +15,6 @@ namespace libraryControlSystem2.UI
             InitializeComponent();
         }
 
-        private void btnTestConnection_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DbConnection db = new DbConnection();
-                MySqlConnection conn = db.OpenConnection();
-
-                MessageBox.Show("MySQL bağlantısı başarılı");
-
-                db.CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Bağlantı hatası: " + ex.Message);
-            }
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             BookForm bookForm = new BookForm();

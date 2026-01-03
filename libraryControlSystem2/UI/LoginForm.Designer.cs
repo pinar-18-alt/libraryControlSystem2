@@ -29,19 +29,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTestConnection = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnTestConnection
-            // 
-            this.btnTestConnection.Location = new System.Drawing.Point(639, 346);
-            this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(149, 92);
-            this.btnTestConnection.TabIndex = 0;
-            this.btnTestConnection.Text = "test et";
-            this.btnTestConnection.UseVisualStyleBackColor = true;
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
             // 
             // btnLogin
             // 
@@ -59,7 +48,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 516);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnTestConnection);
             this.Name = "LoginForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -67,8 +55,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnTestConnection;
         private System.Windows.Forms.Button btnLogin;
     }
 }
