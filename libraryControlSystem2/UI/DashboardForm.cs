@@ -1,6 +1,4 @@
-﻿using libraryControlSystem2.BLL;
-using System;
-using System.Data;
+﻿using System;
 using System.Windows.Forms;
 
 namespace libraryControlSystem2.UI
@@ -15,20 +13,18 @@ namespace libraryControlSystem2.UI
             _userRole = role;
         }
 
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            ApplyRolePermissions();
+        }
 
         private void ApplyRolePermissions()
         {
+            // Staff raporları göremez
             if (_userRole == "Staff")
             {
                 btnReports.Visible = false;
             }
-        }
-
-        private void DashboardForm_Load(object sender, EventArgs e)
-        {
-
-
-
         }
 
         private void btnBooks_Click(object sender, EventArgs e)
@@ -43,7 +39,6 @@ namespace libraryControlSystem2.UI
             form.Show();
         }
 
-
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             BorrowForm form = new BorrowForm();
@@ -57,4 +52,3 @@ namespace libraryControlSystem2.UI
         }
     }
 }
-

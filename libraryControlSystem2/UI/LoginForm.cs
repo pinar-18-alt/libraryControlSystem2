@@ -16,7 +16,10 @@ namespace libraryControlSystem2.UI
             try
             {
                 UserBLL bll = new UserBLL();
-                var dt = bll.Login(txtUsername.Text, txtPassword.Text);
+                var dt = bll.Login(
+                    txtUsername.Text.Trim(),
+                    txtPassword.Text.Trim()
+                );
 
                 if (dt.Rows.Count == 0)
                 {
@@ -27,8 +30,11 @@ namespace libraryControlSystem2.UI
                 // 🔹 ROLÜ AL
                 string role = dt.Rows[0]["Role"].ToString().Trim();
 
+                // 🔹 DASHBOARD'A GİT
                 DashboardForm dashboard = new DashboardForm(role);
                 dashboard.Show();
+
+                // 🔹 LOGIN KAPAT
                 this.Hide();
             }
             catch (Exception ex)
