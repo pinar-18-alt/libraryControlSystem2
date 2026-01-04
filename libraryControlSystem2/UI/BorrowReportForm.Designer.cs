@@ -49,21 +49,20 @@
             this.dgvDueSoon.AllowUserToDeleteRows = false;
             this.dgvDueSoon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDueSoon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDueSoon.Location = new System.Drawing.Point(12, 43);
+            this.dgvDueSoon.Location = new System.Drawing.Point(24, 43);
             this.dgvDueSoon.MultiSelect = false;
             this.dgvDueSoon.Name = "dgvDueSoon";
             this.dgvDueSoon.ReadOnly = true;
             this.dgvDueSoon.RowHeadersWidth = 51;
             this.dgvDueSoon.RowTemplate.Height = 24;
             this.dgvDueSoon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDueSoon.Size = new System.Drawing.Size(326, 84);
+            this.dgvDueSoon.Size = new System.Drawing.Size(407, 168);
             this.dgvDueSoon.TabIndex = 0;
-        
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 24);
+            this.label1.Location = new System.Drawing.Point(111, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 16);
             this.label1.TabIndex = 1;
@@ -71,7 +70,7 @@
             // 
             // btnReturnBook
             // 
-            this.btnReturnBook.Location = new System.Drawing.Point(174, 346);
+            this.btnReturnBook.Location = new System.Drawing.Point(571, 388);
             this.btnReturnBook.Name = "btnReturnBook";
             this.btnReturnBook.Size = new System.Drawing.Size(116, 50);
             this.btnReturnBook.TabIndex = 2;
@@ -85,21 +84,20 @@
             this.dgvLateBorrows.AllowUserToDeleteRows = false;
             this.dgvLateBorrows.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLateBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLateBorrows.Location = new System.Drawing.Point(12, 184);
+            this.dgvLateBorrows.Location = new System.Drawing.Point(24, 260);
             this.dgvLateBorrows.MultiSelect = false;
             this.dgvLateBorrows.Name = "dgvLateBorrows";
             this.dgvLateBorrows.ReadOnly = true;
             this.dgvLateBorrows.RowHeadersWidth = 51;
             this.dgvLateBorrows.RowTemplate.Height = 24;
             this.dgvLateBorrows.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLateBorrows.Size = new System.Drawing.Size(326, 89);
+            this.dgvLateBorrows.Size = new System.Drawing.Size(407, 164);
             this.dgvLateBorrows.TabIndex = 3;
-        
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 156);
+            this.label2.Location = new System.Drawing.Point(148, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 4;
@@ -111,20 +109,20 @@
             this.dgvMostBorrowed.AllowUserToDeleteRows = false;
             this.dgvMostBorrowed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMostBorrowed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostBorrowed.Location = new System.Drawing.Point(425, 43);
+            this.dgvMostBorrowed.Location = new System.Drawing.Point(848, 43);
             this.dgvMostBorrowed.MultiSelect = false;
             this.dgvMostBorrowed.Name = "dgvMostBorrowed";
             this.dgvMostBorrowed.ReadOnly = true;
             this.dgvMostBorrowed.RowHeadersWidth = 51;
             this.dgvMostBorrowed.RowTemplate.Height = 24;
             this.dgvMostBorrowed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMostBorrowed.Size = new System.Drawing.Size(326, 84);
+            this.dgvMostBorrowed.Size = new System.Drawing.Size(407, 168);
             this.dgvMostBorrowed.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(497, 24);
+            this.label3.Location = new System.Drawing.Point(949, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 16);
             this.label3.TabIndex = 6;
@@ -136,20 +134,20 @@
             this.dgvActiveMembers.AllowUserToDeleteRows = false;
             this.dgvActiveMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvActiveMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActiveMembers.Location = new System.Drawing.Point(425, 189);
+            this.dgvActiveMembers.Location = new System.Drawing.Point(848, 260);
             this.dgvActiveMembers.MultiSelect = false;
             this.dgvActiveMembers.Name = "dgvActiveMembers";
             this.dgvActiveMembers.ReadOnly = true;
             this.dgvActiveMembers.RowHeadersWidth = 51;
             this.dgvActiveMembers.RowTemplate.Height = 24;
             this.dgvActiveMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvActiveMembers.Size = new System.Drawing.Size(326, 84);
+            this.dgvActiveMembers.Size = new System.Drawing.Size(407, 164);
             this.dgvActiveMembers.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(497, 156);
+            this.label4.Location = new System.Drawing.Point(1015, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 8;
@@ -159,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1347, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvActiveMembers);
             this.Controls.Add(this.label3);

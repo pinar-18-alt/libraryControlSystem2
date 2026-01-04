@@ -45,23 +45,23 @@
             // cmbMembers
             // 
             this.cmbMembers.FormattingEnabled = true;
-            this.cmbMembers.Location = new System.Drawing.Point(105, 90);
+            this.cmbMembers.Location = new System.Drawing.Point(121, 129);
             this.cmbMembers.Name = "cmbMembers";
-            this.cmbMembers.Size = new System.Drawing.Size(121, 24);
+            this.cmbMembers.Size = new System.Drawing.Size(203, 24);
             this.cmbMembers.TabIndex = 0;
             // 
             // cmbBooks
             // 
             this.cmbBooks.FormattingEnabled = true;
-            this.cmbBooks.Location = new System.Drawing.Point(105, 150);
+            this.cmbBooks.Location = new System.Drawing.Point(121, 207);
             this.cmbBooks.Name = "cmbBooks";
-            this.cmbBooks.Size = new System.Drawing.Size(121, 24);
+            this.cmbBooks.Size = new System.Drawing.Size(203, 24);
             this.cmbBooks.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 93);
+            this.label1.Location = new System.Drawing.Point(32, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 153);
+            this.label2.Location = new System.Drawing.Point(32, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 3;
@@ -78,14 +78,14 @@
             // 
             // dtpDueDate
             // 
-            this.dtpDueDate.Location = new System.Drawing.Point(216, 27);
+            this.dtpDueDate.Location = new System.Drawing.Point(51, 295);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(200, 22);
             this.dtpDueDate.TabIndex = 4;
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(15, 373);
+            this.btnBorrow.Location = new System.Drawing.Point(35, 373);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(81, 36);
             this.btnBorrow.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(117, 373);
+            this.btnReturn.Location = new System.Drawing.Point(151, 373);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 36);
             this.btnReturn.TabIndex = 6;
@@ -105,27 +105,27 @@
             // dgvBorrows
             // 
             this.dgvBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBorrows.Location = new System.Drawing.Point(286, 110);
+            this.dgvBorrows.Location = new System.Drawing.Point(357, 110);
             this.dgvBorrows.Name = "dgvBorrows";
             this.dgvBorrows.RowHeadersWidth = 51;
             this.dgvBorrows.RowTemplate.Height = 24;
-            this.dgvBorrows.Size = new System.Drawing.Size(254, 328);
+            this.dgvBorrows.Size = new System.Drawing.Size(374, 348);
             this.dgvBorrows.TabIndex = 7;
             // 
             // dgvLateBorrows
             // 
             this.dgvLateBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLateBorrows.Location = new System.Drawing.Point(594, 110);
+            this.dgvLateBorrows.Location = new System.Drawing.Point(818, 110);
             this.dgvLateBorrows.Name = "dgvLateBorrows";
             this.dgvLateBorrows.RowHeadersWidth = 51;
             this.dgvLateBorrows.RowTemplate.Height = 24;
-            this.dgvLateBorrows.Size = new System.Drawing.Size(254, 328);
+            this.dgvLateBorrows.Size = new System.Drawing.Size(386, 348);
             this.dgvLateBorrows.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(600, 79);
+            this.label3.Location = new System.Drawing.Point(928, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 16);
             this.label3.TabIndex = 9;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 511);
+            this.ClientSize = new System.Drawing.Size(1312, 511);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvLateBorrows);
             this.Controls.Add(this.dgvBorrows);

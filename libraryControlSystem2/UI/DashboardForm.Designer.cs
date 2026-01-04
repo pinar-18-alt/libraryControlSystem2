@@ -25,43 +25,43 @@
             // 
             // btnBooks
             // 
-            this.btnBooks.Location = new System.Drawing.Point(148, 95);
+            this.btnBooks.Location = new System.Drawing.Point(247, 95);
             this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(107, 120);
+            this.btnBooks.Size = new System.Drawing.Size(241, 120);
             this.btnBooks.TabIndex = 3;
             this.btnBooks.Text = "Kitap İşlemleri";
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // btnMembers
             // 
-            this.btnMembers.Location = new System.Drawing.Point(344, 95);
+            this.btnMembers.Location = new System.Drawing.Point(544, 95);
             this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Size = new System.Drawing.Size(107, 120);
+            this.btnMembers.Size = new System.Drawing.Size(241, 120);
             this.btnMembers.TabIndex = 2;
             this.btnMembers.Text = "Üye İşlemleri";
             this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(539, 95);
+            this.btnBorrow.Location = new System.Drawing.Point(852, 95);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(107, 120);
+            this.btnBorrow.Size = new System.Drawing.Size(241, 120);
             this.btnBorrow.TabIndex = 1;
             this.btnBorrow.Text = "Ödünç / İade";
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
             // btnReports
             // 
-            this.btnReports.Location = new System.Drawing.Point(344, 280);
+            this.btnReports.Location = new System.Drawing.Point(524, 288);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(107, 120);
+            this.btnReports.Size = new System.Drawing.Size(282, 120);
             this.btnReports.TabIndex = 0;
             this.btnReports.Text = "Raporlar";
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // DashboardForm
             // 
-            this.ClientSize = new System.Drawing.Size(1161, 605);
+            this.ClientSize = new System.Drawing.Size(1344, 605);
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.btnMembers);

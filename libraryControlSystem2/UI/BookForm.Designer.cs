@@ -199,16 +199,13 @@
             // 
             // btnLowStock
             // 
-            this.btnLowStock.Location = new System.Drawing.Point(497, 351);
+            this.btnLowStock.Location = new System.Drawing.Point(630, 371);
             this.btnLowStock.Name = "btnLowStock";
             this.btnLowStock.Size = new System.Drawing.Size(132, 43);
             this.btnLowStock.TabIndex = 26;
             this.btnLowStock.Text = "Stokta Azalanlar";
             this.btnLowStock.UseVisualStyleBackColor = true;
             this.btnLowStock.Click += new System.EventHandler(this.btnLowStock_Click);
-
-
-
             // 
             // btnSearch
             // 
