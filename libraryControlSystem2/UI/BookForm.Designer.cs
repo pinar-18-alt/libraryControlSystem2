@@ -177,7 +177,7 @@
             this.btnListBooks.TabIndex = 23;
             this.btnListBooks.Text = "Kitapları Listele";
             this.btnListBooks.UseVisualStyleBackColor = true;
-            this.btnListBooks.Click += new System.EventHandler(this.btnListBooks_Click);
+          
             // 
             // btnDeleteBook
             // 
@@ -207,7 +207,7 @@
             this.btnLowStock.TabIndex = 26;
             this.btnLowStock.Text = "Stokta Azalanlar";
             this.btnLowStock.UseVisualStyleBackColor = true;
-            this.btnLowStock.Click += new System.EventHandler(this.btnLowStock_Click);
+          
             // 
             // btnSearch
             // 
@@ -217,7 +217,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 16);
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "Ara";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+          
             // 
             // txtSearch
             // 
@@ -225,8 +225,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(199, 22);
             this.txtSearch.TabIndex = 28;
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            // 
+
             // btnBorrowReport
             // 
             this.btnBorrowReport.Location = new System.Drawing.Point(1050, 54);
@@ -265,7 +264,7 @@
             this.Controls.Add(this.label1);
             this.Name = "BookForm";
             this.Text = "BookForm";
-            this.Load += new System.EventHandler(this.BookForm_Load);
+       
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

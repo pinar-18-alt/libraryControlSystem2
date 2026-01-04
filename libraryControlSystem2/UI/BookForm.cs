@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using libraryControlSystem2.BLL;
 
@@ -7,27 +6,54 @@ namespace libraryControlSystem2.UI
 {
     public partial class BookForm : Form
     {
-        int selectedBookId = 0;
+        private int selectedBookId = 0;
+        private string _userRole;
 
-        public BookForm()
+        // 🔹 SADECE PARAMETRELİ CONSTRUCTOR
+        public BookForm(string role)
         {
             InitializeComponent();
-            LoadBooks(); // Form açılır açılmaz listele
+            _userRole = role;
+
+            LoadBooks();
+            ApplyRolePermissions();
         }
 
-        //  KİTAPLARI YÜKLE (RAPORLAMA)
+        // 🔹 ROL BAZLI YETKİ KONTROLÜ
+        private void ApplyRolePermissions()
+        {
+            if (_userRole == "User")
+            {
+                btnAddBook.Visible = false;
+                btnDeleteBook.Visible = false;
+                btnUpdateBook.Visible = false;
+                btnLowStock.Visible = false;
+                btnBorrowReport.Visible = false; // 🔴 RAPOR YOK
+            }
+
+            // STAFF → yönetir ama RAPOR GÖREMEZ
+            if (_userRole == "Staff")
+            {
+                btnBorrowReport.Visible = false; // 🔴 SADECE BU YETERLİ
+            }
+
+            // ADMIN → HER ŞEY AÇIK (HİÇBİR ŞEY YAPMA)
+        }
+
+        // 🔹 KİTAPLARI YÜKLE
         private void LoadBooks()
         {
             BookBLL bookBLL = new BookBLL();
             dgvBooks.DataSource = bookBLL.GetAllBooks();
 
-            dgvBooks.Columns[0].Visible = false; // BookID gizle
+            if (dgvBooks.Columns.Count > 0)
+                dgvBooks.Columns[0].Visible = false;
+
             dgvBooks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBooks.ReadOnly = true;
             dgvBooks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        //  FORM TEMİZLEME (ADIM 9)
         private void ClearInputs()
         {
             txtISBN.Clear();
@@ -38,17 +64,18 @@ namespace libraryControlSystem2.UI
             txtStock.Clear();
 
             selectedBookId = 0;
-            btnAddBook.Enabled = true;
+
+            if (_userRole != "User")
+                btnAddBook.Enabled = true;
         }
 
-        //  KİTAP EKLE
+        // 🔹 EKLE
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             try
             {
-                BookBLL bookBLL = new BookBLL();
-
-                bookBLL.AddBook(
+                BookBLL bll = new BookBLL();
+                bll.AddBook(
                     txtISBN.Text,
                     txtTitle.Text,
                     txtAuthor.Text,
@@ -57,71 +84,8 @@ namespace libraryControlSystem2.UI
                     txtStock.Text
                 );
 
-                dgvBooks.DataSource = bookBLL.GetAllBooks();
-                MessageBox.Show("Kitap başarıyla eklendi.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //  KİTAPLARI LİSTELE
-        private void btnListBooks_Click(object sender, EventArgs e)
-        {
-            LoadBooks();
-        }
-
-        //  KİTAP SİL
-        private void btnDeleteBook_Click(object sender, EventArgs e)
-        {
-            if (dgvBooks.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Lütfen silinecek kitabı seçin.");
-                return;
-            }
-
-            int selectedId = Convert.ToInt32(
-                dgvBooks.SelectedRows[0].Cells[0].Value
-            );
-
-            BookBLL bookBLL = new BookBLL();
-            bookBLL.DeleteBook(selectedId);
-
-            MessageBox.Show("Kitap silindi.");
-
-            LoadBooks();
-            ClearInputs();
-        }
-
-        // KİTAP GÜNCELLE
-        private void btnUpdateBook_Click(object sender, EventArgs e)
-        {
-           
-            if (selectedBookId == 0)
-            {
-                MessageBox.Show("Güncellenecek kitabı seçin.");
-                return;
-            }
-
-            try
-            {
-                BookBLL bookBLL = new BookBLL();
-
-                bookBLL.UpdateBook(
-                    selectedBookId,
-                    txtISBN.Text.Trim(),
-                    txtTitle.Text.Trim(),
-                    txtAuthor.Text.Trim(),
-                    txtPublisher.Text.Trim(),
-                    txtYear.Text.Trim(),
-                    txtStock.Text.Trim()
-                );
-
-              
-                MessageBox.Show("Kitap başarıyla güncellendi.");
-
-                dgvBooks.DataSource = bookBLL.GetAllBooks();
+                MessageBox.Show("Kitap eklendi.");
+                LoadBooks();
                 ClearInputs();
             }
             catch (Exception ex)
@@ -130,20 +94,62 @@ namespace libraryControlSystem2.UI
             }
         }
 
-
-        //  GRID SATIR SEÇİMİ → TEXTBOX DOLDUR
-        private void dgvBooks_CellClick(object sender, DataGridViewCellEventArgs e)
+        // 🔹 SİL
+        private void btnDeleteBook_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0 || dgvBooks.Rows[e.RowIndex].Cells[0].Value == null || dgvBooks.Rows[e.RowIndex].Cells[0].Value == DBNull.Value)
+            if (dgvBooks.SelectedRows.Count == 0)
             {
+                MessageBox.Show("Silinecek kitabı seçin.");
                 return;
             }
-            if (e.RowIndex < 0)
-                return;
 
-            selectedBookId = Convert.ToInt32(
-                dgvBooks.Rows[e.RowIndex].Cells[0].Value
-            );
+            int id = Convert.ToInt32(dgvBooks.SelectedRows[0].Cells[0].Value);
+            BookBLL bll = new BookBLL();
+            bll.DeleteBook(id);
+
+            MessageBox.Show("Kitap silindi.");
+            LoadBooks();
+            ClearInputs();
+        }
+
+        // 🔹 GÜNCELLE
+        private void btnUpdateBook_Click(object sender, EventArgs e)
+        {
+            if (selectedBookId == 0)
+            {
+                MessageBox.Show("Güncellenecek kitabı seçin.");
+                return;
+            }
+
+            try
+            {
+                BookBLL bll = new BookBLL();
+                bll.UpdateBook(
+                    selectedBookId,
+                    txtISBN.Text,
+                    txtTitle.Text,
+                    txtAuthor.Text,
+                    txtPublisher.Text,
+                    txtYear.Text,
+                    txtStock.Text
+                );
+
+                MessageBox.Show("Kitap güncellendi.");
+                LoadBooks();
+                ClearInputs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //  GRID SEÇİM
+        private void dgvBooks_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            selectedBookId = Convert.ToInt32(dgvBooks.Rows[e.RowIndex].Cells[0].Value);
 
             txtISBN.Text = dgvBooks.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -152,53 +158,22 @@ namespace libraryControlSystem2.UI
             txtYear.Text = dgvBooks.Rows[e.RowIndex].Cells[5].Value.ToString();
             txtStock.Text = dgvBooks.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-            btnAddBook.Enabled = false; // Güncelleme moduna geç
+            if (_userRole != "User")
+                btnAddBook.Enabled = false;
         }
 
-        private void BookForm_Load(object sender, EventArgs e)
-        {
-            BookBLL bookBLL = new BookBLL();
-            dgvBooks.DataSource = bookBLL.GetAllBooks();
-
-            dgvBooks.Columns[0].Visible = false;
-            dgvBooks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvBooks.ReadOnly = true;
-            dgvBooks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
-        private void btnLowStock_Click(object sender, EventArgs e)
-        {
-            BookBLL bookBLL = new BookBLL();
-            dgvBooks.DataSource = bookBLL.GetLowStockBooks();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                BookBLL bookBLL = new BookBLL();
-                dgvBooks.DataSource = bookBLL.SearchBooks(txtSearch.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+        // BORROW RAPOR (SADECE ADMIN)
         private void btnBorrowReport_Click(object sender, EventArgs e)
         {
-            BorrowReportForm reportForm = new BorrowReportForm();
+            if (_userRole != "Admin")
+            {
+                MessageBox.Show("Raporlara sadece admin erişebilir.");
+                return;
+            }
+
+            BorrowReportForm reportForm = new BorrowReportForm(_userRole);
             reportForm.Show();
         }
 
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                BookBLL bookBLL = new BookBLL();
-                dgvBooks.DataSource = bookBLL.SearchBooks(txtSearch.Text);
-            }
-
-        }
     }
 }

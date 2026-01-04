@@ -12,8 +12,23 @@ namespace libraryControlSystem2.UI
             InitializeComponent();
         }
 
+        private string _userRole;
+
+        public BorrowReportForm(string role)
+        {
+            InitializeComponent();
+            _userRole = role;
+        }
+
         private void BorrowReportForm_Load(object sender, EventArgs e)
         {
+
+            if (_userRole != "Admin")
+            {
+                MessageBox.Show("Bu sayfaya erişim yetkiniz yok.");
+                this.Close();
+                return;
+            }
             BorrowBLL borrowBLL = new BorrowBLL();
 
             // 🔹 İADESİ YAKLAŞAN KİTAPLAR

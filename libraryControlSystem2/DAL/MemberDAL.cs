@@ -5,6 +5,7 @@ namespace libraryControlSystem2.DAL
 {
     public class MemberDAL
     {
+        // LİSTELE
         public DataTable GetAllMembers()
         {
             DbConnection db = new DbConnection();
@@ -20,7 +21,7 @@ namespace libraryControlSystem2.DAL
             return dt;
         }
 
-        // ÜYE EKLE
+        // EKLE
         public void AddMember(
             string firstName,
             string lastName,
@@ -45,6 +46,50 @@ namespace libraryControlSystem2.DAL
             cmd.ExecuteNonQuery();
             db.CloseConnection();
         }
+
+        // GÜNCELLE
+        public void UpdateMember(
+            int memberId,
+            string firstName,
+            string lastName,
+            string phone,
+            string email)
+        {
+            DbConnection db = new DbConnection();
+
+            string query = @"UPDATE Members SET
+                            FirstName = @FirstName,
+                            LastName = @LastName,
+                            Phone = @Phone,
+                            Email = @Email
+                            WHERE MemberID = @MemberID";
+
+            MySqlCommand cmd =
+                new MySqlCommand(query, db.OpenConnection());
+
+            cmd.Parameters.AddWithValue("@FirstName", firstName);
+            cmd.Parameters.AddWithValue("@LastName", lastName);
+            cmd.Parameters.AddWithValue("@Phone", phone);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@MemberID", memberId);
+
+            cmd.ExecuteNonQuery();
+            db.CloseConnection();
+        }
+
+        //  SİL
+        public void DeleteMember(int memberId)
+        {
+            DbConnection db = new DbConnection();
+
+            string query = "DELETE FROM Members WHERE MemberID = @MemberID";
+            MySqlCommand cmd =
+                new MySqlCommand(query, db.OpenConnection());
+
+            cmd.Parameters.AddWithValue("@MemberID", memberId);
+
+            cmd.ExecuteNonQuery();
+            db.CloseConnection();
+        }
     }
 }
-

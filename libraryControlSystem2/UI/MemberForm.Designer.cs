@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.btnDeleteMember = new System.Windows.Forms.Button();
+            this.btnUpdateMember = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,13 +84,13 @@
             // 
             // btnListMembers
             // 
-            this.btnListMembers.Location = new System.Drawing.Point(224, 236);
+            this.btnListMembers.Location = new System.Drawing.Point(398, 225);
             this.btnListMembers.Name = "btnListMembers";
             this.btnListMembers.Size = new System.Drawing.Size(140, 23);
             this.btnListMembers.TabIndex = 5;
             this.btnListMembers.Text = "Üyeleri Listele";
             this.btnListMembers.UseVisualStyleBackColor = true;
-            this.btnListMembers.Click += new System.EventHandler(this.btnListMembers_Click);
+       
             // 
             // label1
             // 
@@ -140,11 +142,31 @@
             this.dgvMembers.Size = new System.Drawing.Size(294, 160);
             this.dgvMembers.TabIndex = 10;
             // 
+            // btnDeleteMember
+            // 
+            this.btnDeleteMember.Location = new System.Drawing.Point(89, 285);
+            this.btnDeleteMember.Name = "btnDeleteMember";
+            this.btnDeleteMember.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteMember.TabIndex = 11;
+            this.btnDeleteMember.Text = "Sil";
+            this.btnDeleteMember.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateMember
+            // 
+            this.btnUpdateMember.Location = new System.Drawing.Point(143, 236);
+            this.btnUpdateMember.Name = "btnUpdateMember";
+            this.btnUpdateMember.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateMember.TabIndex = 12;
+            this.btnUpdateMember.Text = "Güncelle";
+            this.btnUpdateMember.UseVisualStyleBackColor = true;
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdateMember);
+            this.Controls.Add(this.btnDeleteMember);
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -178,5 +200,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvMembers;
+        private System.Windows.Forms.Button btnDeleteMember;
+        private System.Windows.Forms.Button btnUpdateMember;
     }
 }

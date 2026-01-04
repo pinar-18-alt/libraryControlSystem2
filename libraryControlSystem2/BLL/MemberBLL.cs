@@ -6,7 +6,7 @@ namespace libraryControlSystem2.BLL
 {
     public class MemberBLL
     {
-        // ÜYE EKLE
+        // EKLE
         public void AddMember(
             string firstName,
             string lastName,
@@ -19,17 +19,40 @@ namespace libraryControlSystem2.BLL
             if (string.IsNullOrWhiteSpace(lastName))
                 throw new Exception("Üye soyadı boş olamaz.");
 
-            MemberDAL memberDal = new MemberDAL();
-            memberDal.AddMember(firstName, lastName, phone, email);
+            MemberDAL dal = new MemberDAL();
+            dal.AddMember(firstName, lastName, phone, email);
         }
 
-        // ÜYELERİ LİSTELE
+        // LİSTELE
         public DataTable GetAllMembers()
         {
-            MemberDAL memberDal = new MemberDAL();
-            return memberDal.GetAllMembers();
+            MemberDAL dal = new MemberDAL();
+            return dal.GetAllMembers();
         }
-       
 
+        // GÜNCELLE
+        public void UpdateMember(
+            int memberId,
+            string firstName,
+            string lastName,
+            string phone,
+            string email)
+        {
+            if (memberId <= 0)
+                throw new Exception("Geçersiz üye.");
+
+            MemberDAL dal = new MemberDAL();
+            dal.UpdateMember(memberId, firstName, lastName, phone, email);
+        }
+
+        //  SİL
+        public void DeleteMember(int memberId)
+        {
+            if (memberId <= 0)
+                throw new Exception("Geçersiz üye.");
+
+            MemberDAL dal = new MemberDAL();
+            dal.DeleteMember(memberId);
+        }
     }
 }

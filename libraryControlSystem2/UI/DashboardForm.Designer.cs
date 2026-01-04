@@ -28,70 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTotalBooks = new System.Windows.Forms.Label();
-            this.lblActiveBorrows = new System.Windows.Forms.Label();
-            this.lblTotalMembers = new System.Windows.Forms.Label();
-            this.lblLateBorrows = new System.Windows.Forms.Label();
+            this.btnBooks = new System.Windows.Forms.Button();
+            this.btnMembers = new System.Windows.Forms.Button();
+            this.btnBorrow = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblTotalBooks
+            // btnBooks
             // 
-            this.lblTotalBooks.AutoSize = true;
-            this.lblTotalBooks.Location = new System.Drawing.Point(12, 9);
-            this.lblTotalBooks.Name = "lblTotalBooks";
-            this.lblTotalBooks.Size = new System.Drawing.Size(100, 16);
-            this.lblTotalBooks.TabIndex = 0;
-            this.lblTotalBooks.Text = "Toplam Kitap: 0";
+            this.btnBooks.Location = new System.Drawing.Point(148, 95);
+            this.btnBooks.Name = "btnBooks";
+            this.btnBooks.Size = new System.Drawing.Size(107, 120);
+            this.btnBooks.TabIndex = 0;
+            this.btnBooks.Text = "Kitap İşlemleri";
+            this.btnBooks.UseVisualStyleBackColor = true;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
-            // lblActiveBorrows
+            // btnMembers
             // 
-            this.lblActiveBorrows.AutoSize = true;
-            this.lblActiveBorrows.Location = new System.Drawing.Point(12, 42);
-            this.lblActiveBorrows.Name = "lblActiveBorrows";
-            this.lblActiveBorrows.Size = new System.Drawing.Size(70, 16);
-            this.lblActiveBorrows.TabIndex = 1;
-            this.lblActiveBorrows.Text = "Ödünçte: 0";
+            this.btnMembers.Location = new System.Drawing.Point(344, 95);
+            this.btnMembers.Name = "btnMembers";
+            this.btnMembers.Size = new System.Drawing.Size(107, 120);
+            this.btnMembers.TabIndex = 1;
+            this.btnMembers.Text = "Üye İşlemleri";
+            this.btnMembers.UseVisualStyleBackColor = true;
+            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
             // 
-            // lblTotalMembers
+            // btnBorrow
             // 
-            this.lblTotalMembers.AutoSize = true;
-            this.lblTotalMembers.Location = new System.Drawing.Point(12, 78);
-            this.lblTotalMembers.Name = "lblTotalMembers";
-            this.lblTotalMembers.Size = new System.Drawing.Size(85, 16);
-            this.lblTotalMembers.TabIndex = 2;
-            this.lblTotalMembers.Text = "Toplam Üye:";
+            this.btnBorrow.Location = new System.Drawing.Point(539, 95);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(107, 120);
+            this.btnBorrow.TabIndex = 2;
+            this.btnBorrow.Text = "Ödünç / İade";
+            this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
-            // lblLateBorrows
+            // btnReports
             // 
-            this.lblLateBorrows.AutoSize = true;
-            this.lblLateBorrows.Location = new System.Drawing.Point(12, 108);
-            this.lblLateBorrows.Name = "lblLateBorrows";
-            this.lblLateBorrows.Size = new System.Drawing.Size(75, 16);
-            this.lblLateBorrows.TabIndex = 3;
-            this.lblLateBorrows.Text = "Gecikenler:";
+            this.btnReports.Location = new System.Drawing.Point(344, 280);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(107, 120);
+            this.btnReports.TabIndex = 3;
+            this.btnReports.Text = "Raporlar";
+            this.btnReports.UseVisualStyleBackColor = true;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblLateBorrows);
-            this.Controls.Add(this.lblTotalMembers);
-            this.Controls.Add(this.lblActiveBorrows);
-            this.Controls.Add(this.lblTotalBooks);
+            this.Controls.Add(this.btnReports);
+            this.Controls.Add(this.btnBorrow);
+            this.Controls.Add(this.btnMembers);
+            this.Controls.Add(this.btnBooks);
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
-       
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblTotalBooks;
-        private System.Windows.Forms.Label lblActiveBorrows;
-        private System.Windows.Forms.Label lblTotalMembers;
-        private System.Windows.Forms.Label lblLateBorrows;
+        private System.Windows.Forms.Button btnBooks;
+        private System.Windows.Forms.Button btnMembers;
+        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnReports;
     }
 }
