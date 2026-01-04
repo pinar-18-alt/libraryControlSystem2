@@ -28,13 +28,13 @@ namespace libraryControlSystem2.UI
                 btnDeleteBook.Visible = false;
                 btnUpdateBook.Visible = false;
                 btnLowStock.Visible = false;
-                btnBorrowReport.Visible = false; // 🔴 RAPOR YOK
+               // btnBorrowReport.Visible = false; // 🔴 RAPOR YOK
             }
 
             // STAFF → yönetir ama RAPOR GÖREMEZ
             if (_userRole == "Staff")
             {
-                btnBorrowReport.Visible = false; // 🔴 SADECE BU YETERLİ
+               // btnBorrowReport.Visible = false; // 🔴 SADECE BU YETERLİ
             }
 
             // ADMIN → HER ŞEY AÇIK (HİÇBİR ŞEY YAPMA)
@@ -161,19 +161,19 @@ namespace libraryControlSystem2.UI
             if (_userRole != "User")
                 btnAddBook.Enabled = false;
         }
-
-        // BORROW RAPOR (SADECE ADMIN)
-        private void btnBorrowReport_Click(object sender, EventArgs e)
+        //  STOKTA AZALAN KİTAPLAR
+        private void btnLowStock_Click(object sender, EventArgs e)
         {
-            if (_userRole != "Admin")
-            {
-                MessageBox.Show("Raporlara sadece admin erişebilir.");
-                return;
-            }
-
-            BorrowReportForm reportForm = new BorrowReportForm(_userRole);
-            reportForm.Show();
+            BookBLL bll = new BookBLL();
+            dgvBooks.DataSource = bll.GetLowStockBooks();
         }
+        private void btnListBooks_Click(object sender, EventArgs e)
+        {
+            LoadBooks();
+            ClearInputs();
+        }
+
+
 
     }
 }
