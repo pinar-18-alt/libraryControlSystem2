@@ -33,7 +33,7 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.btnAddMember = new System.Windows.Forms.Button();
-            this.btnListMembers = new System.Windows.Forms.Button();
+        
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,7 +90,8 @@
             this.btnListMembers.TabIndex = 5;
             this.btnListMembers.Text = "Üyeleri Listele";
             this.btnListMembers.UseVisualStyleBackColor = true;
-       
+            this.btnListMembers.Click += new System.EventHandler(this.btnListMembers_Click);
+
             // 
             // label1
             // 
@@ -141,6 +142,8 @@
             this.dgvMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMembers.Size = new System.Drawing.Size(294, 160);
             this.dgvMembers.TabIndex = 10;
+            this.dgvMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellClick);
+        
             // 
             // btnDeleteMember
             // 
@@ -150,6 +153,7 @@
             this.btnDeleteMember.TabIndex = 11;
             this.btnDeleteMember.Text = "Sil";
             this.btnDeleteMember.UseVisualStyleBackColor = true;
+            this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
             // 
             // btnUpdateMember
             // 
@@ -159,6 +163,7 @@
             this.btnUpdateMember.TabIndex = 12;
             this.btnUpdateMember.Text = "Güncelle";
             this.btnUpdateMember.UseVisualStyleBackColor = true;
+            this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
             // 
             // MemberForm
             // 

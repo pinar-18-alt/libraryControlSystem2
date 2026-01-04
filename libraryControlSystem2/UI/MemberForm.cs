@@ -12,12 +12,12 @@ namespace libraryControlSystem2.UI
         public MemberForm(string role)
         {
             InitializeComponent();
-            _userRole = role;
+            _userRole = role.Trim();
         }
 
         private void MemberForm_Load(object sender, EventArgs e)
         {
-            if (_userRole == "User")
+            if (_userRole != "Admin" && _userRole != "Staff")
             {
                 MessageBox.Show("Bu sayfaya erişim yetkiniz yok.");
                 this.Close();
@@ -33,8 +33,8 @@ namespace libraryControlSystem2.UI
             MemberBLL bll = new MemberBLL();
             dgvMembers.DataSource = bll.GetAllMembers();
 
-            if (dgvMembers.Columns.Count > 0)
-                dgvMembers.Columns[0].Visible = false;
+            if (dgvMembers.Columns.Contains("MemberID"))
+                dgvMembers.Columns["MemberID"].Visible = false;
         }
 
         private void SetupGrid()
@@ -45,18 +45,22 @@ namespace libraryControlSystem2.UI
             dgvMembers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        // 🔹 DATAGRID TIKLANINCA
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            selectedMemberId = Convert.ToInt32(dgvMembers.Rows[e.RowIndex].Cells[0].Value);
+            selectedMemberId = Convert.ToInt32(
+                dgvMembers.Rows[e.RowIndex].Cells["MemberID"].Value
+            );
 
-            txtFirstName.Text = dgvMembers.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtLastName.Text = dgvMembers.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtPhone.Text = dgvMembers.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtEmail.Text = dgvMembers.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtFirstName.Text = dgvMembers.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
+            txtLastName.Text = dgvMembers.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
+            txtPhone.Text = dgvMembers.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
+            txtEmail.Text = dgvMembers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
         }
 
+        // ➕ EKLE
         private void btnAddMember_Click(object sender, EventArgs e)
         {
             MemberBLL bll = new MemberBLL();
@@ -72,11 +76,12 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
+        // ✏️ GÜNCELLE
         private void btnUpdateMember_Click(object sender, EventArgs e)
         {
             if (selectedMemberId == 0)
             {
-                MessageBox.Show("Üye seçin.");
+                MessageBox.Show("Güncellenecek üyeyi seçin.");
                 return;
             }
 
@@ -94,11 +99,12 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
+        // 🗑️ SİL
         private void btnDeleteMember_Click(object sender, EventArgs e)
         {
             if (selectedMemberId == 0)
             {
-                MessageBox.Show("Üye seçin.");
+                MessageBox.Show("Silinecek üyeyi seçin.");
                 return;
             }
 
@@ -106,6 +112,13 @@ namespace libraryControlSystem2.UI
             bll.DeleteMember(selectedMemberId);
 
             MessageBox.Show("Üye silindi.");
+            LoadMembers();
+            ClearInputs();
+        }
+
+        // 📋 LİSTELE
+        private void btnListMembers_Click(object sender, EventArgs e)
+        {
             LoadMembers();
             ClearInputs();
         }
