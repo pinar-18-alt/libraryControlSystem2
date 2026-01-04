@@ -58,7 +58,7 @@
             this.dgvDueSoon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDueSoon.Size = new System.Drawing.Size(326, 84);
             this.dgvDueSoon.TabIndex = 0;
-            this.dgvDueSoon.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvDueSoon_RowPrePaint);
+        
             // 
             // label1
             // 
@@ -94,7 +94,7 @@
             this.dgvLateBorrows.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLateBorrows.Size = new System.Drawing.Size(326, 89);
             this.dgvLateBorrows.TabIndex = 3;
-            this.dgvLateBorrows.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvLateBorrows_RowPrePaint_1);
+        
             // 
             // label2
             // 

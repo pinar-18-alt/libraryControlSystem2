@@ -10,7 +10,7 @@ namespace libraryControlSystem2.UI
         public DashboardForm(string role)
         {
             InitializeComponent();
-            _userRole = role;
+            _userRole = role.Trim();
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
@@ -20,8 +20,8 @@ namespace libraryControlSystem2.UI
 
         private void ApplyRolePermissions()
         {
-            // Staff raporları göremez
-            if (_userRole == "Staff")
+            // 🔒 Admin olmayan RAPORLARI GÖREMEZ
+            if (_userRole != "Admin")
             {
                 btnReports.Visible = false;
             }
@@ -47,7 +47,13 @@ namespace libraryControlSystem2.UI
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            BorrowReportForm form = new BorrowReportForm();
+            if (_userRole != "Admin")
+            {
+                MessageBox.Show("Bu sayfaya erişim yetkiniz yok.");
+                return;
+            }
+
+            BorrowReportForm form = new BorrowReportForm(_userRole);
             form.Show();
         }
     }
