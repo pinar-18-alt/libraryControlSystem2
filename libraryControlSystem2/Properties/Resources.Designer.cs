@@ -73,6 +73,56 @@ namespace libraryControlSystem2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_4781ec4781ec47811 {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_4781ec4781ec47811", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_4781ec4781ec47812 {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_4781ec4781ec47812", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_6a9d6z6a9d6z6a9d {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_6a9d6z6a9d6z6a9d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_bzppaibzppaibzpp {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_bzppaibzppaibzpp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap librarybackround {
+            get {
+                object obj = ResourceManager.GetObject("librarybackround", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WIN_20250829_14_30_01_Pro {
             get {
                 object obj = ResourceManager.GetObject("WIN_20250829_14_30_01_Pro", resourceCulture);

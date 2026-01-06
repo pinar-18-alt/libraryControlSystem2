@@ -173,7 +173,6 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
-
-
+       
     }
 }

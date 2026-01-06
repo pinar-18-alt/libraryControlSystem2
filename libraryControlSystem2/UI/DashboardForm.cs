@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace libraryControlSystem2.UI
 {
@@ -30,20 +32,44 @@ namespace libraryControlSystem2.UI
         private void btnBooks_Click(object sender, EventArgs e)
         {
             BookForm form = new BookForm(_userRole);
+
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = new Point(
+                this.Location.X + (this.Width - form.Width) / 2,
+                this.Location.Y + (this.Height - form.Height) / 2
+            );
+
             form.Show();
         }
+
 
         private void btnMembers_Click(object sender, EventArgs e)
         {
             MemberForm form = new MemberForm(_userRole);
+
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = new Point(
+                this.Location.X + (this.Width - form.Width) / 2,
+                this.Location.Y + (this.Height - form.Height) / 2
+            );
+
             form.Show();
         }
+
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             BorrowForm form = new BorrowForm();
+
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = new Point(
+                this.Location.X + (this.Width - form.Width) / 2,
+                this.Location.Y + (this.Height - form.Height) / 2
+            );
+
             form.Show();
         }
+
 
         private void btnReports_Click(object sender, EventArgs e)
         {
@@ -54,6 +80,11 @@ namespace libraryControlSystem2.UI
             }
 
             BorrowReportForm form = new BorrowReportForm(_userRole);
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = new Point(
+                this.Location.X + (this.Width - form.Width) / 2,
+                this.Location.Y + (this.Height - form.Height) / 2
+            );
             form.Show();
         }
     }

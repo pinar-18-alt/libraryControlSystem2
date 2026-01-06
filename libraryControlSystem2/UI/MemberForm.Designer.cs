@@ -46,35 +46,35 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(111, 74);
+            this.txtFirstName.Location = new System.Drawing.Point(90, 101);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(201, 22);
             this.txtFirstName.TabIndex = 0;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(111, 200);
+            this.txtEmail.Location = new System.Drawing.Point(90, 280);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(201, 22);
             this.txtEmail.TabIndex = 1;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(111, 154);
+            this.txtPhone.Location = new System.Drawing.Point(90, 217);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(201, 22);
             this.txtPhone.TabIndex = 2;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(111, 115);
+            this.txtLastName.Location = new System.Drawing.Point(90, 162);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(201, 22);
             this.txtLastName.TabIndex = 3;
             // 
             // btnAddMember
             // 
-            this.btnAddMember.Location = new System.Drawing.Point(57, 274);
+            this.btnAddMember.Location = new System.Drawing.Point(30, 373);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Size = new System.Drawing.Size(94, 38);
             this.btnAddMember.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // btnListMembers
             // 
-            this.btnListMembers.Location = new System.Drawing.Point(904, 431);
+            this.btnListMembers.Location = new System.Drawing.Point(482, 530);
             this.btnListMembers.Name = "btnListMembers";
             this.btnListMembers.Size = new System.Drawing.Size(140, 23);
             this.btnListMembers.TabIndex = 5;
@@ -95,36 +95,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 80);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(26, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 16);
+            this.label1.Size = new System.Drawing.Size(35, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ad:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 121);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(14, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.Size = new System.Drawing.Size(60, 23);
             this.label2.TabIndex = 7;
             this.label2.Text = "Soyad:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 160);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(14, 217);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(68, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "Telefon:";
+           
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 206);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(16, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.Size = new System.Drawing.Size(58, 23);
             this.label4.TabIndex = 9;
             this.label4.Text = "E-mail";
             // 
@@ -132,20 +142,20 @@
             // 
             this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Location = new System.Drawing.Point(655, 24);
+            this.dgvMembers.Location = new System.Drawing.Point(310, 43);
             this.dgvMembers.MultiSelect = false;
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.ReadOnly = true;
             this.dgvMembers.RowHeadersWidth = 51;
             this.dgvMembers.RowTemplate.Height = 24;
             this.dgvMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMembers.Size = new System.Drawing.Size(617, 358);
+            this.dgvMembers.Size = new System.Drawing.Size(541, 450);
             this.dgvMembers.TabIndex = 10;
             this.dgvMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellClick);
             // 
             // btnDeleteMember
             // 
-            this.btnDeleteMember.Location = new System.Drawing.Point(111, 329);
+            this.btnDeleteMember.Location = new System.Drawing.Point(90, 440);
             this.btnDeleteMember.Name = "btnDeleteMember";
             this.btnDeleteMember.Size = new System.Drawing.Size(91, 38);
             this.btnDeleteMember.TabIndex = 11;
@@ -155,7 +165,7 @@
             // 
             // btnUpdateMember
             // 
-            this.btnUpdateMember.Location = new System.Drawing.Point(181, 274);
+            this.btnUpdateMember.Location = new System.Drawing.Point(164, 373);
             this.btnUpdateMember.Name = "btnUpdateMember";
             this.btnUpdateMember.Size = new System.Drawing.Size(91, 38);
             this.btnUpdateMember.TabIndex = 12;
@@ -167,7 +177,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 510);
+            this.BackgroundImage = global::libraryControlSystem2.Properties.Resources.Gemini_Generated_Image_6a9d6z6a9d6z6a9d;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(882, 603);
             this.Controls.Add(this.btnUpdateMember);
             this.Controls.Add(this.btnDeleteMember);
             this.Controls.Add(this.dgvMembers);

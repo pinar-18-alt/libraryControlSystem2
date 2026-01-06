@@ -98,11 +98,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\BookBLL.cs" />
-    <Compile Include="BLL\BorrowBLL.cs" />
-    <Compile Include="BLL\DashboardBLL.cs" />
-    <Compile Include="BLL\MemberBLL.cs" />
-    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="Domin\BookBLL.cs" />
+    <Compile Include="Domin\BorrowBLL.cs" />
+    <Compile Include="Domin\DashboardBLL.cs" />
+    <Compile Include="Domin\MemberBLL.cs" />
+    <Compile Include="Domin\UserBLL.cs" />
     <Compile Include="DAL\BookDAL.cs" />
     <Compile Include="DAL\BorrowDAL.cs" />
     <Compile Include="DAL\DashboardDAL.cs" />
@@ -194,6 +194,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_4781ec4781ec4781.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_4781ec4781ec47811.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\librarybackround.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_4781ec4781ec47812.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_bzppaibzppaibzpp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_6a9d6z6a9d6z6a9d.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

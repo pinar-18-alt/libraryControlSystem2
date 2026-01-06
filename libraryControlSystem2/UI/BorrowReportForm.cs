@@ -69,5 +69,7 @@ namespace libraryControlSystem2.UI
             dgvDueSoon.DataSource = bll.GetDueSoonBorrows();
             dgvLateBorrows.DataSource = bll.GetLateBorrows();
         }
+
+        
     }
 }

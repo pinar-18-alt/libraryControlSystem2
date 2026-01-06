@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowForm));
             this.cmbMembers = new System.Windows.Forms.ComboBox();
             this.cmbBooks = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             // cmbMembers
             // 
             this.cmbMembers.FormattingEnabled = true;
-            this.cmbMembers.Location = new System.Drawing.Point(121, 129);
+            this.cmbMembers.Location = new System.Drawing.Point(203, 82);
             this.cmbMembers.Name = "cmbMembers";
             this.cmbMembers.Size = new System.Drawing.Size(203, 24);
             this.cmbMembers.TabIndex = 0;
@@ -53,41 +54,43 @@
             // cmbBooks
             // 
             this.cmbBooks.FormattingEnabled = true;
-            this.cmbBooks.Location = new System.Drawing.Point(121, 207);
+            this.cmbBooks.Location = new System.Drawing.Point(458, 82);
             this.cmbBooks.Name = "cmbBooks";
             this.cmbBooks.Size = new System.Drawing.Size(203, 24);
             this.cmbBooks.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 137);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(239, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.Size = new System.Drawing.Size(129, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Üye seç";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 215);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(491, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(120, 46);
             this.label2.TabIndex = 3;
             this.label2.Text = "Kitap seç";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpDueDate
             // 
-            this.dtpDueDate.Location = new System.Drawing.Point(51, 295);
+            this.dtpDueDate.Location = new System.Drawing.Point(325, 124);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpDueDate.Size = new System.Drawing.Size(250, 22);
             this.dtpDueDate.TabIndex = 4;
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(35, 373);
+            this.btnBorrow.Location = new System.Drawing.Point(203, 176);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(81, 36);
+            this.btnBorrow.Size = new System.Drawing.Size(203, 36);
             this.btnBorrow.TabIndex = 5;
             this.btnBorrow.Text = "Ödünç Ver";
             this.btnBorrow.UseVisualStyleBackColor = true;
@@ -95,9 +98,9 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(151, 373);
+            this.btnReturn.Location = new System.Drawing.Point(458, 176);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 36);
+            this.btnReturn.Size = new System.Drawing.Size(203, 36);
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "İade Al";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -105,7 +108,7 @@
             // dgvBorrows
             // 
             this.dgvBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBorrows.Location = new System.Drawing.Point(357, 110);
+            this.dgvBorrows.Location = new System.Drawing.Point(32, 243);
             this.dgvBorrows.Name = "dgvBorrows";
             this.dgvBorrows.RowHeadersWidth = 51;
             this.dgvBorrows.RowTemplate.Height = 24;
@@ -115,7 +118,7 @@
             // dgvLateBorrows
             // 
             this.dgvLateBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLateBorrows.Location = new System.Drawing.Point(818, 110);
+            this.dgvLateBorrows.Location = new System.Drawing.Point(458, 243);
             this.dgvLateBorrows.Name = "dgvLateBorrows";
             this.dgvLateBorrows.RowHeadersWidth = 51;
             this.dgvLateBorrows.RowTemplate.Height = 24;
@@ -135,7 +138,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 511);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(882, 603);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvLateBorrows);
             this.Controls.Add(this.dgvBorrows);
@@ -147,6 +152,7 @@
             this.Controls.Add(this.cmbBooks);
             this.Controls.Add(this.cmbMembers);
             this.Name = "BorrowForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BorrowForm";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrows)).EndInit();

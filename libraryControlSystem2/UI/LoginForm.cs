@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using libraryControlSystem2.BLL;
 
@@ -43,6 +44,16 @@ namespace libraryControlSystem2.UI
             }
         }
 
-       
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(52, 152, 219);
+            btnLogin.ForeColor = Color.White;
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(41, 128, 185);
+            btnLogin.ForeColor = Color.WhiteSmoke;
+        }
     }
 }
