@@ -30,7 +30,6 @@
         {
             this.dgvDueSoon = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReturnBook = new System.Windows.Forms.Button();
             this.dgvLateBorrows = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvMostBorrowed = new System.Windows.Forms.DataGridView();
@@ -69,16 +68,6 @@
             this.label1.Size = new System.Drawing.Size(251, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "İade Tarihi Yaklaşan Kitaplar";
-            // 
-            // btnReturnBook
-            // 
-            this.btnReturnBook.Location = new System.Drawing.Point(378, 294);
-            this.btnReturnBook.Name = "btnReturnBook";
-            this.btnReturnBook.Size = new System.Drawing.Size(116, 50);
-            this.btnReturnBook.TabIndex = 2;
-            this.btnReturnBook.Text = "Kitabı İade Et";
-            this.btnReturnBook.UseVisualStyleBackColor = true;
-            this.btnReturnBook.Click += new System.EventHandler(this.btnReturnBook_Click);
             // 
             // dgvLateBorrows
             // 
@@ -176,7 +165,6 @@
             this.Controls.Add(this.dgvMostBorrowed);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvLateBorrows);
-            this.Controls.Add(this.btnReturnBook);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDueSoon);
             this.Name = "BorrowReportForm";
@@ -196,7 +184,6 @@
 
         private System.Windows.Forms.DataGridView dgvDueSoon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnReturnBook;
         private System.Windows.Forms.DataGridView dgvLateBorrows;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvMostBorrowed;

@@ -56,9 +56,10 @@
             // 
             this.label1.Location = new System.Drawing.Point(54, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.Size = new System.Drawing.Size(59, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "ISBN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtISBN
             // 

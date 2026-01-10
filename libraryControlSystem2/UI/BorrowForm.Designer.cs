@@ -37,10 +37,8 @@
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.dgvBorrows = new System.Windows.Forms.DataGridView();
-            this.dgvLateBorrows = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrows)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLateBorrows)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbMembers
@@ -104,6 +102,7 @@
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "İade Al";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click_1);
             // 
             // dgvBorrows
             // 
@@ -112,18 +111,8 @@
             this.dgvBorrows.Name = "dgvBorrows";
             this.dgvBorrows.RowHeadersWidth = 51;
             this.dgvBorrows.RowTemplate.Height = 24;
-            this.dgvBorrows.Size = new System.Drawing.Size(374, 348);
+            this.dgvBorrows.Size = new System.Drawing.Size(782, 348);
             this.dgvBorrows.TabIndex = 7;
-            // 
-            // dgvLateBorrows
-            // 
-            this.dgvLateBorrows.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLateBorrows.Location = new System.Drawing.Point(458, 243);
-            this.dgvLateBorrows.Name = "dgvLateBorrows";
-            this.dgvLateBorrows.RowHeadersWidth = 51;
-            this.dgvLateBorrows.RowTemplate.Height = 24;
-            this.dgvLateBorrows.Size = new System.Drawing.Size(386, 348);
-            this.dgvLateBorrows.TabIndex = 8;
             // 
             // label3
             // 
@@ -142,7 +131,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(882, 603);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dgvLateBorrows);
             this.Controls.Add(this.dgvBorrows);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);
@@ -156,7 +144,6 @@
             this.Text = "BorrowForm";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrows)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLateBorrows)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +159,6 @@
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.DataGridView dgvBorrows;
-        private System.Windows.Forms.DataGridView dgvLateBorrows;
         private System.Windows.Forms.Label label3;
     }
 }
