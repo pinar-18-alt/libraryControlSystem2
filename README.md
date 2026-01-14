@@ -84,3 +84,15 @@ Proje, sürdürülebilir ve okunabilir bir yapı sağlamak amacıyla **katmanlı
 - **Database:** MySQL  
 
 ---
+
+## 📞 İletişim
+Herhangi bir sorunuz veya öneriniz varsa lütfen benimle iletişime geçin:
+
+Ad:Pınar
+Soyad:Kökbalık
+Tel No:+90 537 063 72 11
+E-posta: pinarkokbalik1@gmail.com
+
+▶𝚈𝚘𝚞𝚝𝚞𝚋𝚎 Video
+Youtube proje tanıtım videosu
+https://www.youtube.com/watch?v=zKNoIAv7UUw
