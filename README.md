@@ -86,13 +86,29 @@ Proje, sürdürülebilir ve okunabilir bir yapı sağlamak amacıyla **katmanlı
 ---
 
 ## 📞 İletişim
-Herhangi bir sorunuz veya öneriniz varsa lütfen benimle iletişime geçin:
 
-Ad:Pınar
-Soyad:Kökbalık
-Tel No:+90 537 063 72 11
-E-posta: pinarkokbalik1@gmail.com
+Herhangi bir sorunuz veya öneriniz varsa  
+lütfen benimle iletişime geçin:
 
-▶𝚈𝚘𝚞𝚝𝚞𝚋𝚎 Video
-Youtube proje tanıtım videosu
-https://www.youtube.com/watch?v=zKNoIAv7UUw
+**Ad:**  
+Pınar  
+
+**Soyad:**  
+Kökbalık  
+
+**Telefon:**  
++90 537 063 72 11  
+
+**E-posta:**  
+pinarkokbalik1@gmail.com  
+
+---
+
+## ▶️ YouTube Video
+
+Projenin tanıtım videosuna  
+aşağıdaki bağlantıdan ulaşabilirsiniz:
+
+[📺 Proje Tanıtım Videosunu İzle](https://www.youtube.com/watch?v=zKNoIAv7UUw)
+
+
