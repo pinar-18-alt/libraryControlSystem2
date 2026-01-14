@@ -6,7 +6,7 @@ namespace libraryControlSystem2.DAL
 {
     public class BorrowDAL
     {
-        // KİTAP ÖDÜNÇ ALMA
+        
         public void BorrowBook(int bookId, int memberId, DateTime dueDate)
         {
             DbConnection db = new DbConnection();
@@ -27,7 +27,7 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
         }
 
-        // İADESİ YAKLAŞAN / GECİKEN KİTAPLAR (RAPOR)
+        
         public DataTable GetDueSoonBorrows()
         {
             DbConnection db = new DbConnection();
@@ -100,7 +100,7 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
             return dt;
         }
-        // GECİKEN KİTAPLAR
+        
         public DataTable GetLateBorrows()
         {
             DbConnection db = new DbConnection();
@@ -126,7 +126,7 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
             return dt;
         }
-        // EN ÇOK ÖDÜNÇ ALINAN KİTAPLAR
+        
         public DataTable GetMostBorrowedBooks()
         {
             DbConnection db = new DbConnection();
@@ -148,7 +148,7 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
             return dt;
         }
-        // AKTİF ÜYELER RAPORU
+        
         public DataTable GetActiveMembers()
         {
             DbConnection db = new DbConnection();

@@ -9,7 +9,7 @@ namespace libraryControlSystem2.UI
         private int selectedBookId = 0;
         private string _userRole;
 
-        // 🔹 SADECE PARAMETRELİ CONSTRUCTOR
+        //  SADECE PARAMETRELİ CONSTRUCTOR
         public BookForm(string role)
         {
             InitializeComponent();
@@ -19,7 +19,7 @@ namespace libraryControlSystem2.UI
             ApplyRolePermissions();
         }
 
-        // 🔹 ROL BAZLI YETKİ KONTROLÜ
+        //  ROL BAZLI YETKİ KONTROLÜ
         private void ApplyRolePermissions()
         {
             if (_userRole == "User")
@@ -28,19 +28,19 @@ namespace libraryControlSystem2.UI
                 btnDeleteBook.Visible = false;
                 btnUpdateBook.Visible = false;
                 btnLowStock.Visible = false;
-               // btnBorrowReport.Visible = false; // 🔴 RAPOR YOK
+               
             }
 
-            // STAFF → yönetir ama RAPOR GÖREMEZ
+            
             if (_userRole == "Staff")
             {
-               // btnBorrowReport.Visible = false; // 🔴 SADECE BU YETERLİ
+              
             }
 
-            // ADMIN → HER ŞEY AÇIK (HİÇBİR ŞEY YAPMA)
+           
         }
 
-        // 🔹 KİTAPLARI YÜKLE
+        // KİTAPLARI YÜKLE
         private void LoadBooks()
         {
             BookBLL bookBLL = new BookBLL();
@@ -69,7 +69,7 @@ namespace libraryControlSystem2.UI
                 btnAddBook.Enabled = true;
         }
 
-        // 🔹 EKLE
+        // EKLE
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             try
@@ -94,7 +94,7 @@ namespace libraryControlSystem2.UI
             }
         }
 
-        // 🔹 SİL
+        // SİL
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
             if (dgvBooks.SelectedRows.Count == 0)
@@ -112,7 +112,7 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
-        // 🔹 GÜNCELLE
+        // GÜNCELLE
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
             if (selectedBookId == 0)
@@ -173,6 +173,30 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
-       
+        private void SearchBooks()
+        {
+            string keyword = txtSearch.Text.Trim();
+
+            BookBLL bll = new BookBLL();
+            dgvBooks.DataSource = bll.SearchBooks(keyword);
+
+            if (dgvBooks.Columns.Contains("BookID"))
+                dgvBooks.Columns["BookID"].Visible = false;
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchBooks();
+                e.SuppressKeyPress = true; 
+            }
+        }
+
+        private void btnListBooks_Click_1(object sender, EventArgs e)
+        {
+            LoadBooks();
+            ClearInputs();
+        }
     }
 }

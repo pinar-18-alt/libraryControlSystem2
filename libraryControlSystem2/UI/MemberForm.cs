@@ -45,7 +45,7 @@ namespace libraryControlSystem2.UI
             dgvMembers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        // 🔹 DATAGRID TIKLANINCA
+        //DATAGRID TIKLANINCA
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -60,7 +60,7 @@ namespace libraryControlSystem2.UI
             txtEmail.Text = dgvMembers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
         }
 
-        // ➕ EKLE
+        //  EKLE
         private void btnAddMember_Click(object sender, EventArgs e)
         {
             MemberBLL bll = new MemberBLL();
@@ -76,7 +76,7 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
-        // ✏️ GÜNCELLE
+        //  GÜNCELLE
         private void btnUpdateMember_Click(object sender, EventArgs e)
         {
             if (selectedMemberId == 0)
@@ -99,7 +99,7 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
-        // 🗑️ SİL
+        // SİL
         private void btnDeleteMember_Click(object sender, EventArgs e)
         {
             if (selectedMemberId == 0)
@@ -116,7 +116,7 @@ namespace libraryControlSystem2.UI
             ClearInputs();
         }
 
-        // 📋 LİSTELE
+        //  LİSTELE
         private void btnListMembers_Click(object sender, EventArgs e)
         {
             LoadMembers();

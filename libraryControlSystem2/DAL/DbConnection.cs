@@ -5,7 +5,7 @@ namespace libraryControlSystem2.DAL
 {
     public class DbConnection
     {
-        // 🔹 DIŞARIDAN ERİŞİLEBİLEN CONNECTION STRING
+        
         public static string ConnectionString =
             "Server=172.21.54.253;Database=26_132430006;Uid=26_132430006;Pwd=İnif123.;";
 

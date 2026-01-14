@@ -5,7 +5,7 @@ namespace libraryControlSystem2.DAL
 {
     public class MemberDAL
     {
-        // LİSTELE
+      
         public DataTable GetAllMembers()
         {
             DbConnection db = new DbConnection();
@@ -21,7 +21,7 @@ namespace libraryControlSystem2.DAL
             return dt;
         }
 
-        // EKLE
+       
         public void AddMember(
             string firstName,
             string lastName,
@@ -47,7 +47,7 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
         }
 
-        // GÜNCELLE
+        
         public void UpdateMember(
             int memberId,
             string firstName,
@@ -77,7 +77,7 @@ namespace libraryControlSystem2.DAL
             db.CloseConnection();
         }
 
-        //  SİL
+        
         public void DeleteMember(int memberId)
         {
             DbConnection db = new DbConnection();

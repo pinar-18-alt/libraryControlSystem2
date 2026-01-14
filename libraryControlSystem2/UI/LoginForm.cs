@@ -28,14 +28,14 @@ namespace libraryControlSystem2.UI
                     return;
                 }
 
-                // 🔹 ROLÜ AL
+               
                 string role = dt.Rows[0]["Role"].ToString().Trim();
 
-                // 🔹 DASHBOARD'A GİT
+                
                 DashboardForm dashboard = new DashboardForm(role);
                 dashboard.Show();
 
-                // 🔹 LOGIN KAPAT
+               
                 this.Hide();
             }
             catch (Exception ex)

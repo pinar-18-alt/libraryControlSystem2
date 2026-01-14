@@ -86,7 +86,7 @@
             // 
             this.btnListMembers.Location = new System.Drawing.Point(482, 530);
             this.btnListMembers.Name = "btnListMembers";
-            this.btnListMembers.Size = new System.Drawing.Size(140, 23);
+            this.btnListMembers.Size = new System.Drawing.Size(140, 36);
             this.btnListMembers.TabIndex = 5;
             this.btnListMembers.Text = "Üyeleri Listele";
             this.btnListMembers.UseVisualStyleBackColor = true;
@@ -125,7 +125,6 @@
             this.label3.Size = new System.Drawing.Size(68, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "Telefon:";
-           
             // 
             // label4
             // 

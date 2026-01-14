@@ -6,7 +6,7 @@ namespace libraryControlSystem2.DAL
 {
     public class BookDAL
     {
-        // KİTAP EKLEME
+ 
         public void AddBook(
             string isbn,
             string title,
@@ -48,7 +48,7 @@ namespace libraryControlSystem2.DAL
         }
 
 
-        // KİTAPLARI LİSTELEME (RAPORLAMA)
+        
         public DataTable GetAllBooks()
         {
             DbConnection db = new DbConnection();

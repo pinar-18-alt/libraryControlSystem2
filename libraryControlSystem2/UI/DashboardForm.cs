@@ -22,7 +22,7 @@ namespace libraryControlSystem2.UI
 
         private void ApplyRolePermissions()
         {
-            // 🔒 Admin olmayan RAPORLARI GÖREMEZ
+           
             if (_userRole != "Admin")
             {
                 btnReports.Visible = false;

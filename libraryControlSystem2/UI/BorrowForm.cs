@@ -26,7 +26,7 @@ namespace libraryControlSystem2.UI
             DataTable dt = bll.GetAllMembers();
 
             cmbMembers.DataSource = dt;
-            cmbMembers.DisplayMember = "FirstName"; // güvenli kullanım
+            cmbMembers.DisplayMember = "FirstName"; 
             cmbMembers.ValueMember = "MemberID";
         }
 
@@ -96,7 +96,7 @@ namespace libraryControlSystem2.UI
 
         private void btnReturn_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("CLICK GELDİ ");
+           
         }
     }
 }
