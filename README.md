@@ -1,4 +1,10 @@
-﻿# 📚 Kütüphane Yönetim Sistemi
+<img width="1209" height="573" alt="image" src="https://github.com/user-attachments/assets/b15c3240-a4b8-4443-be69-8f9bff9cb150" />
+
+ usecase diyagramı
+ 
+ 
+ 
+ # 📚 Kütüphane Yönetim Sistemi
 
 Kütüphane yönetim süreçlerini dijital ortama taşıyan bir **masaüstü uygulamasıdır**.  
 Bu proje, kütüphane çalışanlarının **kitap, üye ve ödünç alma / iade işlemlerini** kolay ve düzenli bir şekilde yönetmesini sağlar.
