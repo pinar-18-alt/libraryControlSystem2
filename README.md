@@ -90,17 +90,13 @@ Proje, sürdürülebilir ve okunabilir bir yapı sağlamak amacıyla **katmanlı
 Herhangi bir sorunuz veya öneriniz varsa  
 lütfen benimle iletişime geçin:
 
-**Ad:**  
-Pınar  
+**Ad:**  Pınar  
 
-**Soyad:**  
-Kökbalık  
+**Soyad:**  Kökbalık  
 
-**Telefon:**  
-+90 537 063 72 11  
+**Telefon:**  +90 537 063 72 11  
 
-**E-posta:**  
-pinarkokbalik1@gmail.com  
+**E-posta:**  pinarkokbalik1@gmail.com  
 
 ---
 
