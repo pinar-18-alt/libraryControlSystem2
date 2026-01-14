@@ -13,6 +13,8 @@ Sistem; **kullanıcı yetkilendirme**, **kitap stok takibi** ve **raporlama** gi
 - Kullanıcı doğrulama (**Admin / Staff / User** rolleri)
 - Role göre sayfa ve işlem yetkileri
 
+<img width="405" height="474" alt="image" src="https://github.com/user-attachments/assets/a83bd524-391c-47ba-a91c-b8a6d8ce8a9e" />
+
 ---
 
 ### 📖 Kitap İşlemleri
@@ -20,13 +22,19 @@ Sistem; **kullanıcı yetkilendirme**, **kitap stok takibi** ve **raporlama** gi
 - Kitap listeleme  
 - Stok bilgisi takibi  
 - Stokta azalan kitapların görüntülenmesi  
-- Kitap arama özelliği  
+- Kitap arama özelliği
+
+  <img width="1681" height="787" alt="image" src="https://github.com/user-attachments/assets/3a5fa4ec-4369-47db-9e12-f0800dfcfd41" />
+
 
 ---
 
 ### 👤 Üye İşlemleri
 - Üye ekleme, güncelleme ve silme  
 - Üye listeleme  
+
+<img width="1677" height="797" alt="image" src="https://github.com/user-attachments/assets/b7ab700c-5cf1-40d1-b3e7-8426158fca2f" />
+
 
 ---
 
@@ -35,19 +43,16 @@ Sistem; **kullanıcı yetkilendirme**, **kitap stok takibi** ve **raporlama** gi
 - Kitap iade alma  
 - Aktif ödünç kayıtlarını görüntüleme  
 
+<img width="1679" height="797" alt="image" src="https://github.com/user-attachments/assets/7258c1af-54e6-4d45-a1f6-887c857e3bbf" />
+
 ---
 
 ### 📊 Raporlama
 - Ödünç alma raporları (**Admin yetkisiyle**)  
 - Kütüphane kullanım verilerinin izlenmesi  
 
----
+<img width="1677" height="794" alt="image" src="https://github.com/user-attachments/assets/90dde87a-22a5-470b-ba60-15c60ed3a9c4" />
 
-### 🖥️ Kullanıcı Dostu Arayüz
-- **Windows Forms** ile geliştirilmiş sade ve anlaşılır tasarım  
-- Hover efektli butonlar  
-- Merkezi konumlandırılmış formlar  
-- Görsel destekli login ve dashboard ekranları  
 
 ---
 
